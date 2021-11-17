@@ -1,0 +1,42 @@
+*{
+  padding: 0;
+  margin: 0;
+  
+}
+a{
+  text-decoration: none;
+  color:white ;
+}
+a:hover{
+  color: grey;
+}
+
+.hero {
+    height: 100vh;
+    background-image: url(../img/arriba.jpg);
+    background-position: center center;
+    background-size: cover;
+    transition: background-position .3s ease;
+  }
+
+  .menudesplegable{
+    background-color: transparent;
+  }
+
+  .navegacion{
+    position: absolute;
+    z-index: 1;
+    padding: 1.5rem;
+  }
+  
+
+  .navbar-toggler{
+    border: none;
+  }
+.nav-item ul li{
+  display: inline-block;
+  margin-left: 18rem;
+  font-size: 2rem;
+  margin-top: 4rem;
+}
+
