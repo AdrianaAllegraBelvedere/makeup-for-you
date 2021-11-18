@@ -10,6 +10,25 @@ a{
 a:hover{
   color: grey;
 }
+ul {
+  list-style: none;
+}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+
+.marca{
+  font-family: 'Comforter Brush', cursive;
+  font-size: 1.5rem;
+}
 
 .hero {
     height: 100vh;
@@ -26,17 +45,47 @@ a:hover{
   .navegacion{
     position: absolute;
     z-index: 1;
-    padding: 1.5rem;
   }
   
 
   .navbar-toggler{
     border: none;
   }
-.nav-item ul li{
-  display: inline-block;
-  margin-left: 18rem;
-  font-size: 2rem;
-  margin-top: 4rem;
+
+  /*Carrito*/
+  .carrito-btn{
+    display: flex;
+
+  }
+  .carrito-btn p{
+    color: #000;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: .3rem;
+  }
+
+
+
+
+@media (min-width: 720px) {
+  .nav-item ul li {
+    display: inline-block;
+    margin-left: 3rem;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+  }
+  
+
 }
 
+@media (min-width: 960px){
+  .nav-item ul li {
+    display: inline-block;
+    margin-left: 3rem;
+    font-size: 2rem;
+    margin-top: 5rem;
+  }
+  .carrito-btn{
+    padding-right: 2rem;
+  }
+}
