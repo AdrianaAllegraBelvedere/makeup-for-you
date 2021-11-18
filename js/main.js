@@ -13,3 +13,59 @@ const producto12 = new Producto('kit de sombras', 2300, 30, "img/producto12.jpg"
 
 const productos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12];
 let carrito =[];
+
+if (carrito != null) {
+    document.getElementById("contador-carrito").innerHTML = carrito.length;
+    
+}
+
+let acumulador = ``;
+let productosCarrito = '';
+
+obtenerProductosPublicitarios();
+
+productos.forEach((producto) => {
+   
+    acumulador += `<div class="col mb-5">
+    <div class="card h-100">
+        <img class="card-img-top" src="${producto.img}" alt="..." />                            
+        <div class="card-body p-4">
+            <div class="text-center" id="info-card">
+                <h5 class="fw-bolder"> ${producto.nombre} </h5>
+                <p> $ ${producto.precio} </p>
+            </div>
+        </div>
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div class="text-center"> <button class="btn btn-outline-dark mt-auto" href="#" onclick="agregarAlCarrito('${producto.nombre}')">Agregar al carrito</button>
+            </div>
+        </div>
+
+    </div>
+</div>`;
+
+   
+})
+
+document.getElementById('productos').innerHTML = acumulador;
+
+
+function CrearCards(productos){
+
+    let acumuladorPublicitario= ``;
+    productos.forEach((producto) => {
+        acumuladorPublicitario += `<div class="col mb-5">
+        <div class="card h-100">
+            <img class="card-img-top" src="${producto.img}" alt="..." />                            
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <h5 class="fw-bolder"> ${producto.nombre} </h5>
+                </div>
+            </div>
+            
+    
+        </div>
+    </div>`;
+     });
+    document.getElementById('publicidad').innerHTML = acumuladorPublicitario;
+
+}
