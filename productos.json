@@ -1,0 +1,21 @@
+{
+    "productos": [
+        {
+            "nombre": "Segui tu propio estilo",
+            "img": "img/publicidad1.jpg"
+        },
+        {
+            "nombre": "Los mejores productos para tu piel",
+            "img": "img/publicidad2.jpg"
+        },
+        {
+            "nombre": "Marcas seleccionadas",
+            "img": "img/publicidad3.jpg"
+        },
+        {
+            "nombre": "Realza lo mejor de vos",
+            "img": "img/publicidad4.jpg"
+        }
+        
+    ]
+}

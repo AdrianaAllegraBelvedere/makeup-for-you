@@ -49,6 +49,59 @@ productos.forEach((producto) => {
 document.getElementById('productos').innerHTML = acumulador;
 
 
+
+function agregarAlCarrito(titulo){
+    const productoEncontrado = productos.find(productos => productos.nombre === titulo )
+    let acumuladorCarrito = ``;
+    let precioTotal = 0;
+ 
+   
+    carrito.push(productoEncontrado);
+
+    carrito.forEach(producto => {
+        acumuladorCarrito += ` <tr>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+        </tr> `;
+        precioTotal += producto.precio;
+        });
+    
+
+    document.getElementById('contador-carrito').innerHTML = carrito.length
+    document.getElementById('tbody').innerHTML = acumuladorCarrito;
+    document.getElementById('precio-total').innerHTML = `Total: ${precioTotal}`;
+    document.getElementById('alert').innerHTML = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    Agregaste <strong>${productoEncontrado.nombre}</strong> al carito  
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>`;
+
+  
+}
+
+
+ function vaciarCarrito(){
+    carrito = [];
+    document.getElementById('contador-carrito').innerHTML = 0
+    document.getElementById('tbody').innerHTML = '';
+    document.getElementById('precio-total').innerHTML = ``;
+    document.getElementById('alert').innerHTML = ``;
+    
+}
+
+
+function obtenerProductosPublicitarios(){
+
+    const productosJson = '../productos.json';
+    $(document).load(productosJson, function(respuesta, estado){
+        if(estado == "success"){
+            let { productos } = JSON.parse(respuesta);
+            CrearCards(productos);
+        }
+      });
+}
+
 function CrearCards(productos){
 
     let acumuladorPublicitario= ``;
@@ -66,6 +119,5 @@ function CrearCards(productos){
         </div>
     </div>`;
      });
-    document.getElementById('publicidad').innerHTML = acumuladorPublicitario;
-
+    document.getElementById('publcidad').innerHTML = acumuladorPublicitario;
 }
