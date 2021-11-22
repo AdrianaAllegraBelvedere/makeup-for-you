@@ -36,7 +36,7 @@ productos.forEach((producto) => {
             </div>
         </div>
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"> <button class="btn btn-outline-dark mt-auto" href="#" onclick="agregarAlCarrito('${producto.nombre}')">Agregar al carrito</button>
+            <div class="text-center"> <button class="btn btn-outline-dark mt-auto"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" href="#" onclick="agregarAlCarrito('${producto.nombre}')">Agregar al carrito</button>
             </div>
         </div>
 
@@ -70,15 +70,12 @@ function agregarAlCarrito(titulo){
     document.getElementById('contador-carrito').innerHTML = carrito.length
     document.getElementById('tbody').innerHTML = acumuladorCarrito;
     document.getElementById('precio-total').innerHTML = `Total: ${precioTotal}`;
-    document.getElementById('alert').innerHTML = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    Agregaste <strong>${productoEncontrado.nombre}</strong> al carito  
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>`;
+    
 
-  
 }
+
+
+
 
 
  function vaciarCarrito(){
@@ -86,7 +83,6 @@ function agregarAlCarrito(titulo){
     document.getElementById('contador-carrito').innerHTML = 0
     document.getElementById('tbody').innerHTML = '';
     document.getElementById('precio-total').innerHTML = ``;
-    document.getElementById('alert').innerHTML = ``;
     
 }
 
